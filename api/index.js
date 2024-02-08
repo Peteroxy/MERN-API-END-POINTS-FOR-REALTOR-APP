@@ -5,7 +5,6 @@ import userRouter from './routes/user.route.js'
 import authRouter from './routes/auth.route.js'
 import listingRouter from './routes/listing.route.js'
 import cookieParser from 'cookie-parser';
-
 dotenv.config();
 
 mongoose.connect(process.env.MONGO).then(() => {
@@ -22,6 +21,8 @@ app.use(cookieParser());
 app.listen(5000, () => {
     console.log('app started on port 5000');
 });
+
+
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
